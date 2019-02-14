@@ -25,7 +25,6 @@ On maven, update your `pom.xml` in the following way:
         <groupId>io.mock.aws</groupId>
         <artifactId>sqsmock_2.12</artifactId>
         <version>0.1.0-SNAPSHOT</version>
-        <type>pom</type>
         <scope>test</scope>
     </dependency>
 
