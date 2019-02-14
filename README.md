@@ -16,7 +16,7 @@ Implemented API methods:
 
 Sqsmock package is available for Scala 2.12 (on Java 8). To install using SBT, add these statements to your `build.sbt`:
 
-    libraryDependencies += "io.mock.aws" %% "sqsmock" % "0.3.2" % "test"
+    libraryDependencies += "io.mock.aws" %% "sqsmock" % "1.0.0" % "test"
 
 On maven, update your `pom.xml` in the following way:
 
@@ -24,7 +24,7 @@ On maven, update your `pom.xml` in the following way:
     <dependency>
         <groupId>io.mock.aws</groupId>
         <artifactId>sqsmock_2.12</artifactId>
-        <version>0.1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
         <scope>test</scope>
     </dependency>
 

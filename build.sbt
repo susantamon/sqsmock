@@ -1,6 +1,6 @@
 name := "sqsmock"
 
-version := "0.1.0"
+version := "1.0.0"
 
 organization := "io.mock.aws"
 
@@ -21,3 +21,15 @@ libraryDependencies ++= Seq(
 licenses += ("MIT", url("https://opensource.org/licenses/MIT"))
 
 parallelExecution in Test := false
+
+publishTo := {
+  val venus = "https://artifactory.in.here.com/artifactory/"
+  if (isSnapshot.value)
+    Some("Artifactory Realm" at venus + "places-venus-snapshots")
+  else
+    Some("Artifactory Realm"  at venus + "places-venus-releases")
+}
+
+publishMavenStyle := true
+
+credentials += Credentials("Artifactory Realm", "artifactory.in.here.com", "places-ng-bot", "Pds#12345678")
