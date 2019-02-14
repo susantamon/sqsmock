@@ -14,25 +14,17 @@ Implemented API methods:
 
 ## Installation
 
-Sqsmock package is available for Scala 2.12 (on Java 8). To install using SBT, add these
- statements to your `build.sbt`:
+Sqsmock package is available for Scala 2.12 (on Java 8). To install using SBT, add these statements to your `build.sbt`:
 
-    resolvers += Resolver.bintrayRepo("findify", "maven")
-    libraryDependencies += "io.findify" %% "sqsmock" % "0.3.2" % "test",
+    libraryDependencies += "io.mock.aws" %% "sqsmock" % "0.3.2" % "test"
 
 On maven, update your `pom.xml` in the following way:
 
-    // add this entry to <repositories/>
-    <repository>
-      <id>findify</id>
-      <url>https://dl.bintray.com/findify/maven/</url>
-    </repository>
-
     // add this entry to <dependencies/>
     <dependency>
-        <groupId>io.findify</groupId>
+        <groupId>io.mock.aws</groupId>
         <artifactId>sqsmock_2.12</artifactId>
-        <version>0.3.3</version>
+        <version>0.1.0-SNAPSHOT</version>
         <type>pom</type>
         <scope>test</scope>
     </dependency>
