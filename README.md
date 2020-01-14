@@ -11,6 +11,7 @@ Implemented API methods:
 * ReceiveMessage (supported params: MaxNumberOfMessages)
 * SendMessage
 * SendMessageBatch
+* GetQueueUrl
 
 ## Installation
 
