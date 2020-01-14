@@ -20,6 +20,7 @@ class SQSBackend(account:Long, port:Int, system:ActorSystem) {
   val receiveMessageWorker = new ReceiveMessageWorker(account, queueCache, system)
   val sendMessageBatchWorker = new SendMessageBatchWorker(account, queueCache, system)
   val deleteMessageWorker = new DeleteMessageWorker(account, queueCache, system)
+  val getQueueUrlWorker = new GetQueueUrlWorker(account, queueCache, system)
   def process(fields:Map[String,String]) = {
     log.debug(s"processing request for fields $fields")
     fields.get("Action") match {
@@ -28,6 +29,7 @@ class SQSBackend(account:Long, port:Int, system:ActorSystem) {
       case Some("ReceiveMessage") => receiveMessageWorker.process(fields)
       case Some("CreateQueue") => createQueueWorker.process(fields)
       case Some("DeleteMessage") => deleteMessageWorker.process(fields)
+      case Some("GetQueueUrl") => getQueueUrlWorker.process(fields)
       case _ => HttpResponse(StatusCodes.BadRequest, entity = ErrorResponse("Sender", "InvalidParameterValue", "operation not supported").toXML.toString())
     }
   }

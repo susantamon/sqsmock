@@ -12,6 +12,10 @@ class SendReceiveTest extends FlatSpec with Matchers with SQSStartStop {
     val response = client.createQueue("foo")
     assert(response.getQueueUrl == "http://localhost:8001/123/foo")
   }
+  it should "be able to get queue url" in {
+    val result = client.getQueueUrl("foo")
+    assert(result.getQueueUrl == "http://localhost:8001/123/foo")
+  }
   it should "be able to push message to queue" in {
     val result = client.sendMessage(queue, "hello_world")
     assert(result.getMessageId.length > 10)

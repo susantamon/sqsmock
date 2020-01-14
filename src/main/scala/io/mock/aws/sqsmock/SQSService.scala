@@ -38,7 +38,7 @@ class SQSService(port:Int, account:Int = 1) {
         } ~ post {
           formFieldMap { fields =>
             complete {
-              backend.process(fields)
+              backend.process(fields + ("Prefix" -> s"http://localhost:$port/$account/"))
             }
           }
         }
